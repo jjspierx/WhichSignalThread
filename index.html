@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perrin Signal Group</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Enter a message to send to a Perrin Signal Group</h1>
+
+      <form id="message-form">
+        <label class="sr-only" for="message">Message</label>
+        <input
+          id="message"
+          name="message"
+          type="text"
+          placeholder="ex. Does anyone have pickled beets"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <dialog id="confirmation-dialog">
+      <div class="dialog-content">
+        <section id="recipient-step">
+          <h2>Do you think the Glafke's should receive this message?</h2>
+          <div class="button-group">
+            <button type="button" data-include-glafkes="true">Yes</button>
+            <button type="button" data-include-glafkes="false">No</button>
+          </div>
+        </section>
+
+        <section id="send-step" hidden>
+          <p id="thread-choice" class="thread-choice"></p>
+          <h2>Would you like to send this message now?</h2>
+          <div class="button-group">
+            <button type="button" data-send-now>Yes</button>
+            <button type="button" data-send-now>No</button>
+          </div>
+        </section>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
